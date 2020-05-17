@@ -1,0 +1,90 @@
+{
+// ここから
+// デフォルトの起動するターミナルをUbuntu18.04にするために下の２行が必要
+"terminal.integrated.shell.windows": "ubuntu1804.exe",
+"terminal.integrated.shellArgs.windows": ["run", "/usr/bin/bash"],
+
+
+/** vim ****************************
+************************************/
+//無名レジスタだけでなくクリップボードにも保存
+"vim.useSystemClipboard": true,
+//検索結果をハイライト 
+"vim.hlsearch": true,
+// shift + * で検索可能
+"vim.visualstar": true,
+//j+jでEscする 
+"vim.insertModeKeyBindings": [
+    {
+        "before": [
+            "j",
+            "j"
+        ],
+        "after": [
+            "<Esc>"
+        ]
+    }
+],
+"workbench.colorTheme": "Monokai",
+"files.eol": "\n",
+"files.autoGuessEncoding": true,
+"workbench.editor.enablePreview": false,
+"files.associations": {
+    "*.fsp": "javascript",
+    "*.sqltmpl": "sql"
+},
+"window.zoomLevel": 1,
+"editor.cursorBlinking": "smooth",
+"breadcrumbs.enabled": true,
+//ターミナルを全画面表示
+"workbench.useExperimentalGridLayout": true,
+//gitlens blame行をデフォルトで非表示
+"gitlens.codeLens.authors.enabled": false,
+"gitlens.codeLens.recentChange.enabled": false,
+"gitlens.currentLine.enabled": false,
+
+//ファイルをセーブするごとにコードを整えてくれる
+"editor.formatOnSave": false,
+//行を書き終えるごとに行のコードを整えてくれる
+"editor.formatOnType": true,
+//ペーストしたときにコードを整えてくれる
+"editor.formatOnPaste": true,
+
+//予測をどのときに出すのか
+"editor.quickSuggestions": {
+    "other": true,
+    "comments": true,
+    "strings": true
+},
+
+//自動保存をしてくれる
+"files.autoSave": "afterDelay",
+"python.insidersChannel": "off",
+
+// 自動的に関数の括弧補完
+"python.autoComplete.addBrackets": true,
+
+/****** vscode ****************************
+*******************************************/
+
+//参照から除外するディレクトリおよびファイル
+"files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true,
+    "**/__pycache__": true,
+    "**/sql/#*": true //pybuilderのtmpファイルを除外 #1 Build-1.sql etc
+},
+
+"files.exclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true,
+    "**/__pycache__": true,
+    "**/sql/#*": true //pybuilderのtmpファイルを除外 #1 Build-1.sql etc
+},
+"remote.SSH.remotePlatform": {
+    "localhost": "linux"
+}
+
+}
